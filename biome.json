@@ -12,7 +12,9 @@
   "formatter": {
     "enabled": true,
     "indentStyle": "space",
-    "indentWidth": 2
+    "indentWidth": 2,
+    "lineWidth": 120,
+    "useEditorconfig": true
   },
   "linter": {
     "enabled": true,
@@ -20,6 +22,16 @@
       "recommended": true,
       "suspicious": {
         "noUnknownAtRules": "off"
+      },
+      "nursery": {
+        "useSortedClasses": {
+          "fix": "safe",
+          "level": "error",
+          "options": {
+            "attributes": ["className", "classList"],
+            "functions": ["clsx", "cva", "tw", "tw.*"]
+          }
+        }
       }
     },
     "domains": {
