@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { AppProviders } from "@/components/common/app-providers";
+import { Toaster } from "@/components/ui/sonner";
 import { geistMono, geistSans } from "@/fonts";
 import type { LayoutProps } from "@/types/common";
 
@@ -25,7 +26,10 @@ export default function RootLayout({ children }: LayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <AppProviders>{children}</AppProviders>
+        <AppProviders>
+          <Toaster richColors />
+          {children}
+        </AppProviders>
       </body>
     </html>
   );
